@@ -53,7 +53,7 @@ public class loginPage extends pageFactory {
 		loginButton.click();
 	}
 
-	public void verifySuccessMessage(String expectedText) throws InterruptedException {
+	public void verifySuccessMessage(String expectedText) {
 		try {
 			wt.waitForVisibility(messagePopup);
 			String actualText = messagePopup.getText();
