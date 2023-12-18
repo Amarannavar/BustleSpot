@@ -109,22 +109,23 @@ public class SignUpPageComponent extends pageFactory {
 		String confirmPasswordActualText = confirmPasswordTextbox.getText().stripTrailing();
 		Assert.assertEquals(confirmPasswordActualText, "Please enter your confirm password");
 	}
-	
-	public void enterInvalidValues() throws AWTException, InterruptedException {
+
+	public void enterInvalidValues() throws AWTException {
 		Robot robot = new Robot();
 		firstName.click();
-		robot.keyPress(KeyEvent.VK_D);		
+		robot.keyPress(KeyEvent.VK_D);
 		lastName.click();
 		robot.keyPress(KeyEvent.VK_D);
-			
+
 		String emailActualText = emailTextbox.getText().stripTrailing();
-		Assert.assertEquals(emailActualText, "Please enter a valid email address");		 
+		Assert.assertEquals(emailActualText, "Please enter a valid email address");
 		String firstnameActualText = firstNameTextbox.getText().stripTrailing();
-		Assert.assertEquals(firstnameActualText, "Please enter valid first name");		
+		Assert.assertEquals(firstnameActualText, "Please enter valid first name");
 		String lastnameActualText = lastNameTextbox.getText().stripTrailing();
 		Assert.assertEquals(lastnameActualText, "Please enter valid last name");
 		String passwordActualText = passwordTextbox.getText().stripTrailing();
-		Assert.assertEquals(passwordActualText, "The password should include minimum 8 characters, 1 uppercase, 1 special character, 1 number, 1 lowercase");
+		Assert.assertEquals(passwordActualText,
+				"The password should include minimum 8 characters, 1 uppercase, 1 special character, 1 number, 1 lowercase");
 		String confirmPasswordActualText = confirmPasswordTextbox.getText().stripTrailing();
 		Assert.assertEquals(confirmPasswordActualText, "Confirm password should match with password");
 	}

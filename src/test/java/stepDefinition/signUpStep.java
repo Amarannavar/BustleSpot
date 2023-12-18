@@ -46,7 +46,7 @@ public class signUpStep {
 	}
 
 	@Then("enter invalid values in all textbox and verify the error message")
-	public void invalidValue() throws AWTException, InterruptedException {
+	public void invalidValue() throws AWTException {
 		signUp.enterInvalidValues();
 	}
 
