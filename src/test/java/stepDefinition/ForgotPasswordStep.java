@@ -41,12 +41,6 @@ public class ForgotPasswordStep {
 		lg.VerifyErrorMessage(string);
 	}
 
-	@Then("quit application")
-	public void close_the_application() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.close();
-	}
-
 	@Then("Verify popup {string}")
 	public void verifyPopup(String successMessage) {
 		lg.getMessage(successMessage);
