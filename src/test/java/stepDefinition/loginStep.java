@@ -17,6 +17,7 @@ public class loginStep {
 		BaseClass app = new BaseClass();
 		app.Setup();
 		driver = CommonHelper.driver;
+		lg = new loginPageComponent(driver);
 	}
 
 	@Given("I launch the browser and hit the URL")
@@ -29,7 +30,7 @@ public class loginStep {
 	
 
 
-	@Given("user is in login page and enter the {string} and {string}")
+	@When("user is in login page and enter the {string} and {string}")
 	public void loginToApp(String email, String password) throws InterruptedException {
 		lg.enterLoginAndPassword(email, password);
 	}

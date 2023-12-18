@@ -15,7 +15,7 @@ Feature: Login to the application
       | shashidhar.amarannavar1@softsuave.org | Shashi#1231 | No user found. Please sign up. |
 
   @loginScreen @validationEmailAndPassword
-  Scenario Outline: Verify the email and password validation message.
+  Scenario Outline: Verify the email and password textbox validation message.
     Given I launch the browser and hit the URL
     When user enter the "<email>" and "<password>"
     Then Verify the email and password "<validation message>"
@@ -27,7 +27,7 @@ Feature: Login to the application
       |                        | Shashi#12 | Please enter your password         |
 
   @RegressionTest
-  Scenario Outline: Verify the login page.
+  Scenario Outline: Login to the home page.
     Given I launch the browser and hit the URL
     When user is in login page and enter the email and password
     Then Verify "<login success message>"

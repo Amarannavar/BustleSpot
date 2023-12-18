@@ -5,7 +5,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "C:\\Users\\SoftSuave\\eclipse-workspace\\Bustlespot\\Features\\LoginScreenFeatures\\login.feature", glue = {
+@CucumberOptions(features = "C:\\Users\\SoftSuave\\eclipse-workspace\\Bustlespot\\Features\\LoginScreenFeatures", glue = {
 		"stepDefinition" }, monochrome = true, dryRun = false, tags = "@loginScreen or @RegressionTest", plugin = {
 				"pretty", "html:target/cucumber-reports.html" })
 

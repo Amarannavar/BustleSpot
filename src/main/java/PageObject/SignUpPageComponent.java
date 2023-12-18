@@ -62,7 +62,7 @@ public class SignUpPageComponent extends pageFactory {
 		String actualText = messagePopup.getText();
 		Assert.assertEquals(actualText, message);
 		if (actualText.contains(message)) {
-			Assert.assertEquals(actualText, message);
+			System.out.println(actualText);
 		} else {
 			Assert.assertEquals(actualText, message);
 			System.out.println(actualText);
