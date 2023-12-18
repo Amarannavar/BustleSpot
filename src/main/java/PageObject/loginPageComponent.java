@@ -7,12 +7,11 @@ import org.testng.Assert;
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
-public class loginPage extends pageFactory {
+public class loginPageComponent extends pageFactory {
 	public static WebDriver driver;
 	public static ExplicitWaits wt;
-	public boolean value;
 
-	public loginPage(WebDriver driver) {
+	public loginPageComponent(WebDriver driver) {
 		super(driver);
 		wt = new ExplicitWaits(driver);
 	}
@@ -41,8 +40,13 @@ public class loginPage extends pageFactory {
 	@FindBy(xpath = "//label[text()=\"Password\"]/..//p/span")
 	WebElement passwordValidation;
 
+	@FindBy(xpath = "//a[text()='Forgot password?']")
+	WebElement forgotPassword;
+
+	@FindBy(xpath = "//button[text()='Reset Password']")
+	WebElement ResetPasswordButton;
+
 	public void enterLoginAndPassword(String email, String password) throws InterruptedException {
-//		Thread.sleep(5000);
 		wt.waitForVisibility(txtEmail);
 		txtEmail.clear();
 		txtEmail.sendKeys(email);
@@ -52,12 +56,16 @@ public class loginPage extends pageFactory {
 		wt.waitForClickable(loginButton);
 		loginButton.click();
 	}
+	
+	public void getMessage(String expectedText) {
+		wt.waitForVisibility(messagePopup);
+		String actualText = messagePopup.getText();
+		Assert.assertEquals(actualText, expectedText);
+	}
 
 	public void verifySuccessMessage(String expectedText) {
 		try {
-			wt.waitForVisibility(messagePopup);
-			String actualText = messagePopup.getText();
-			Assert.assertEquals(actualText, expectedText);
+			getMessage(expectedText);
 		} catch (Exception e) {
 			title.isDisplayed();
 		}
@@ -72,7 +80,7 @@ public class loginPage extends pageFactory {
 		txtPassword.sendKeys(password);
 		txtPassword.clear();
 	}
-	
+
 	public void validateMessage(String expectedText) {
 		try {
 			wt.waitForVisibility(emailValidation);
@@ -83,5 +91,25 @@ public class loginPage extends pageFactory {
 			String passwordMessage = passwordValidation.getText().stripTrailing();
 			Assert.assertEquals(passwordMessage, expectedText);
 		}
+	}
+
+	public void clickForgotPassword(String email) {
+		wt.waitForVisibility(forgotPassword);
+		forgotPassword.click();
+		wt.waitForVisibility(txtEmail);
+		txtEmail.click();
+		txtEmail.sendKeys(email);
+		txtEmail.clear();		
+		txtEmail.sendKeys(email);	
+	}
+	
+	public void clickResetPassword() {	
+		ResetPasswordButton.click();
+	}
+
+	public void VerifyErrorMessage(String expectedText) {
+		wt.waitForVisibility(emailValidation);
+		String actualText = emailValidation.getText().stripTrailing();
+		Assert.assertEquals(actualText, expectedText);
 	}
 }

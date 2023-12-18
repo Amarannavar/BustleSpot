@@ -14,34 +14,30 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	public static WebDriver driver;
-	
 	public BaseClass() throws IOException {
 		CommonHelper c = new CommonHelper();
 	}
 
-	public void setUp() throws InterruptedException {
-		if(CONSTANT.BROWSER.equalsIgnoreCase("Chrome")) {
+	public void Setup() throws IOException {
+		if (CONSTANT.BROWSER.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--remote-allow-origins=*");
-			ChromeDriver driver = new ChromeDriver(options);
-			driver.get(CONSTANT.URL);  //"https://bustlespot.gamzinn.com/login"
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			driver.manage().window().maximize();
-			Thread.sleep(2000);
+			driver = new ChromeDriver();
 
-			BaseClass.driver=driver;
-		}else {
+			CommonHelper.driver=driver;
+
+		} else if (CONSTANT.BROWSER.equalsIgnoreCase("Firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxDriver driver = new FirefoxDriver();
-			driver.get(CONSTANT.URL);  //"https://bustlespot.gamzinn.com/login"
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-			driver.manage().window().maximize();
-			Thread.sleep(4000);
+			CommonHelper.driver=driver;
 
-			BaseClass.driver=driver;
-			
+		} else {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+			BaseClass.driver = new ChromeDriver(options);
+			CommonHelper.driver=driver;
 		}
-		
 	}
 }

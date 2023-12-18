@@ -1,24 +1,33 @@
 package stepDefinition;
 
 import java.io.IOException;
-
+import java.time.Duration;
 import org.openqa.selenium.WebDriver;
-
 import Base.BaseClass;
-import PageObject.loginPage;
+import PageObject.loginPageComponent;
 import Utility.CONSTANT;
+import Utility.CommonHelper;
 import io.cucumber.java.en.*;
 
 public class loginStep {
-	public static WebDriver driver;
-	public loginPage lg;
+	public WebDriver driver;
+	public loginPageComponent lg;
 
-	public loginStep() throws IOException, InterruptedException {
-		BaseClass bs = new BaseClass();
-		bs.setUp();
-		loginStep.driver = BaseClass.driver;
-		lg = new loginPage(driver);
+	public loginStep() throws IOException {
+		BaseClass app = new BaseClass();
+		app.Setup();
+		driver = CommonHelper.driver;
 	}
+
+	@Given("I launch the browser and hit the URL")
+	public void Launchbrowser() throws InterruptedException {
+		driver.get(CONSTANT.URL);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().window().maximize();
+		Thread.sleep(2000);
+	}
+	
+
 
 	@Given("user is in login page and enter the {string} and {string}")
 	public void loginToApp(String email, String password) throws InterruptedException {
@@ -29,7 +38,7 @@ public class loginStep {
 	public void verify(String successMessage) {
 		lg.verifySuccessMessage(successMessage);
 	}
-
+	
 	@Given("user enter the {string} and {string}")
 	public void enteringCred(String email, String password) {
 		lg.emailCred(email, password);
