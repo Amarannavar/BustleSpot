@@ -2,10 +2,7 @@ package stepDefinition;
 
 import java.awt.AWTException;
 import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
-
-import Base.BaseClass;
 import PageObject.SignUpPageComponent;
 import Utility.CommonHelper;
 import io.cucumber.java.en.*;
@@ -24,20 +21,19 @@ public class signUpStep {
 		signUp.signUpButton();
 	}
 
-	@When("enter {string},{string},{string},{string}, and {string},")
+	@When("enter {string},{string},{string},{string}, and {string}")
 	public void details(String email, String firstname, String lastname, String passwords, String confirmpassword) {
 		signUp.signUpForm(email, firstname, lastname, passwords, confirmpassword);
 
 	}
 
 	@And("click on signUp button")
-	public void clickOnSignUp() {
+	public void clickOnSignUp() throws InterruptedException {
 		signUp.clickOnSignup();
 	}
-
-	@Then("Verify {string} contains")
-	public void verify(String message) {
-		signUp.successMessage(message);
+	@When("navigate to login page")
+	public void navigateBack() throws InterruptedException {
+		signUp.navigate();	
 	}
 
 	@Then("enter blank values in all textbox and verify the error message")

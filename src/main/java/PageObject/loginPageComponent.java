@@ -45,6 +45,8 @@ public class loginPageComponent extends pageFactory {
 
 	@FindBy(xpath = "//button[text()='Reset Password']")
 	WebElement ResetPasswordButton;
+	
+	
 
 	public void enterLoginAndPassword(String email, String password) throws InterruptedException {
 		wt.waitForVisibility(txtEmail);
@@ -61,6 +63,7 @@ public class loginPageComponent extends pageFactory {
 		wt.waitForVisibility(messagePopup);
 		String actualText = messagePopup.getText();
 		Assert.assertEquals(actualText, expectedText);
+		close.click();
 	}
 
 	public void verifySuccessMessage(String expectedText) {

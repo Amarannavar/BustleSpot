@@ -27,8 +27,6 @@ public class loginStep {
 		driver.manage().window().maximize();
 		Thread.sleep(2000);
 	}
-	
-
 
 	@When("user is in login page and enter the {string} and {string}")
 	public void loginToApp(String email, String password) throws InterruptedException {
