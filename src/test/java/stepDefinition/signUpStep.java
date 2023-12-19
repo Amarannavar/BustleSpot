@@ -24,16 +24,25 @@ public class signUpStep {
 	@When("enter {string},{string},{string},{string}, and {string}")
 	public void details(String email, String firstname, String lastname, String passwords, String confirmpassword) {
 		signUp.signUpForm(email, firstname, lastname, passwords, confirmpassword);
+	}
 
+//	@When("enter {string},{string},{string},{string}, and {string},")
+//	public void enter_and(String email, String firstname, String lastname, String passwords, String confirmpassword) {
+//	}
+
+	@Then("Verify {string} contains")
+	public void verify(String message) {
+		signUp.successMessage(message);
 	}
 
 	@And("click on signUp button")
 	public void clickOnSignUp() throws InterruptedException {
 		signUp.clickOnSignup();
 	}
+
 	@When("navigate to login page")
 	public void navigateBack() throws InterruptedException {
-		signUp.navigate();	
+		signUp.navigate();
 	}
 
 	@Then("enter blank values in all textbox and verify the error message")
@@ -45,5 +54,4 @@ public class signUpStep {
 	public void invalidValue() throws AWTException {
 		signUp.enterInvalidValues();
 	}
-
 }

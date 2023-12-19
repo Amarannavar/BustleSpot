@@ -7,15 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
-
 import com.github.javafaker.Faker;
-
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
 public class SignUpPageComponent extends pageFactory {
 
-	public static WebDriver driver;
+	public WebDriver driver;
 	public static ExplicitWaits wt;
 	public String DummyEmail;
 
@@ -71,7 +69,6 @@ public class SignUpPageComponent extends pageFactory {
 	}
 	
 	public void navigate() throws InterruptedException {
-//		Thread.sleep(2000);
 		driver.navigate().back();
 	}
 
@@ -82,6 +79,7 @@ public class SignUpPageComponent extends pageFactory {
 		lastName.sendKeys(lastname);
 		password.sendKeys(passwords);
 		confirmPassword.sendKeys(confirmpassword);
+
 	}
 
 	public void clickOnSignup() throws InterruptedException {
@@ -98,7 +96,7 @@ public class SignUpPageComponent extends pageFactory {
 			System.out.println(actualText);
 		}
 	}
-
+	
 	public void enterBlankValues() {
 		emailId.clear();
 		firstName.clear();
@@ -138,5 +136,4 @@ public class SignUpPageComponent extends pageFactory {
 		String confirmPasswordActualText = confirmPasswordTextbox.getText().stripTrailing();
 		Assert.assertEquals(confirmPasswordActualText, "Confirm password should match with password");
 	}
-
 }

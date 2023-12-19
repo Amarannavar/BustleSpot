@@ -1,10 +1,7 @@
 package stepDefinition;
 
 import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
-
-import Base.BaseClass;
 import PageObject.loginPageComponent;
 import Utility.CommonHelper;
 import io.cucumber.java.en.*;
