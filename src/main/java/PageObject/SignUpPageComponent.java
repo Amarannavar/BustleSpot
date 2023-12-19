@@ -1,24 +1,19 @@
 package PageObject;
 
-<<<<<<< Updated upstream
-=======
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
->>>>>>> Stashed changes
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
-
 import com.github.javafaker.Faker;
-
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
 public class SignUpPageComponent extends pageFactory {
 
-	public static WebDriver driver;
+	public WebDriver driver;
 	public static ExplicitWaits wt;
 	public String DummyEmail;
 
@@ -52,6 +47,21 @@ public class SignUpPageComponent extends pageFactory {
 	@FindBy(xpath = "//div[contains(@class,'MuiAlert-message')]")
 	WebElement messagePopup;
 
+	@FindBy(xpath = "//label[text()='Email ID']/..//p/span")
+	WebElement emailTextbox;
+
+	@FindBy(xpath = "//label[text()='First name']/..//p/span")
+	WebElement firstNameTextbox;
+
+	@FindBy(xpath = "//label[text()='Last name']/..//p/span")
+	WebElement lastNameTextbox;
+
+	@FindBy(xpath = "//label[text()='Password']/..//p/span")
+	WebElement passwordTextbox;
+
+	@FindBy(xpath = "//label[text()='Confirm password']/..//p/span")
+	WebElement confirmPasswordTextbox;
+
 	public void signUpButton() {
 		wt.waitForVisibility(signUpLink);
 		signUpLink.click();
@@ -59,7 +69,6 @@ public class SignUpPageComponent extends pageFactory {
 	}
 	
 	public void navigate() throws InterruptedException {
-//		Thread.sleep(2000);
 		driver.navigate().back();
 	}
 
@@ -70,12 +79,10 @@ public class SignUpPageComponent extends pageFactory {
 		lastName.sendKeys(lastname);
 		password.sendKeys(passwords);
 		confirmPassword.sendKeys(confirmpassword);
-<<<<<<< Updated upstream
-=======
+
 	}
 
 	public void clickOnSignup() throws InterruptedException {
->>>>>>> Stashed changes
 		signUp.click();
 	}
 
@@ -89,9 +96,7 @@ public class SignUpPageComponent extends pageFactory {
 			System.out.println(actualText);
 		}
 	}
-
-<<<<<<< Updated upstream
-=======
+	
 	public void enterBlankValues() {
 		emailId.clear();
 		firstName.clear();
@@ -131,6 +136,4 @@ public class SignUpPageComponent extends pageFactory {
 		String confirmPasswordActualText = confirmPasswordTextbox.getText().stripTrailing();
 		Assert.assertEquals(confirmPasswordActualText, "Confirm password should match with password");
 	}
-
->>>>>>> Stashed changes
 }

@@ -1,10 +1,7 @@
 package stepDefinition;
 
 import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
-
-import Base.BaseClass;
 import PageObject.loginPageComponent;
 import Utility.CommonHelper;
 import io.cucumber.java.en.*;
@@ -32,12 +29,6 @@ public class ForgotPasswordStep {
 	@Then("Verify the email {string}")
 	public void verify_the_email(String string) {
 		lg.VerifyErrorMessage(string);
-	}
-
-	@Then("quit application")
-	public void close_the_application() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.close();
 	}
 
 	@Then("Verify popup {string}")
