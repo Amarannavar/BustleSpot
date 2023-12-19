@@ -14,13 +14,6 @@ public class ForgotPasswordStep {
 	public static WebDriver driver;
 	public loginPageComponent lg;
 
-//	public ForgotPasswordStep() throws IOException, InterruptedException {
-//		BaseClass bs = new BaseClass();
-//		bs.setUp();
-//		ForgotPasswordStep.driver = BaseClass.driver;
-//		lg = new loginPageComponent(driver);
-//	}
-	
 	public ForgotPasswordStep() throws IOException, InterruptedException {
 		driver = CommonHelper.driver;
 		lg = new loginPageComponent(driver);
