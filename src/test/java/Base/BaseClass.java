@@ -30,11 +30,9 @@ public class BaseClass {
 
 		} else {
 			WebDriverManager.chromedriver().setup();
-//			ChromeOptions options = new ChromeOptions();
-//			options.addArguments("--remote-allow-origins=*");
-//			driver = new ChromeDriver(options);
-//			CommonHelper.driver=driver;
-			ChromeDriver driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--remote-allow-origins=*");
+			driver = new ChromeDriver();
 			CommonHelper.driver=driver;
 		}
 	}

@@ -73,7 +73,6 @@ public class OrganizationPageComponent extends pageFactory {
 		Thread.sleep(2000);
 		wt.waitForVisibility(By.xpath("//p[text()='"+orgName+"']/../../..//div//p[text()='Delete']"));
 		driver.findElement(By.xpath("//p[text()='"+orgName+"']/../../..//div//p[text()='Delete']")).click();
-//		wt.waitForClickable(By.xpath("//p[text()='"+orgName+"']/../../..//div//p[text()='Delete']"));
 		yesButton.click();
 	}
 	
