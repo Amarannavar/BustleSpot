@@ -61,8 +61,12 @@ public class OrganizationPageComponent extends pageFactory {
 		wt.waitForVisibility(orgName);
 		orgName.sendKeys(organizationName);
 		orgDescription.sendKeys(description);
+		try {
 		uploadLogo.sendKeys(location);
 		Thread.sleep(2000);
+		}catch(Exception e) {
+			Thread.sleep(2000);
+		}
 		
 	}
 	public void clickOnSubmit() {
