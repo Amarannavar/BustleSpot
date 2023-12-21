@@ -21,7 +21,6 @@ public class BaseClass {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver();
-
 			CommonHelper.driver=driver;
 
 		} else if (CONSTANT.BROWSER.equalsIgnoreCase("Firefox")) {
@@ -33,7 +32,7 @@ public class BaseClass {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--remote-allow-origins=*");
-			BaseClass.driver = new ChromeDriver(options);
+			driver = new ChromeDriver();
 			CommonHelper.driver=driver;
 		}
 	}

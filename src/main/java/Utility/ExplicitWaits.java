@@ -3,6 +3,7 @@ package Utility;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,7 +23,15 @@ public class ExplicitWaits {
 		wt.until(ExpectedConditions.visibilityOf(element));
 	}
 	
+	public void waitForVisibility(By element) {
+		wt.until(ExpectedConditions.visibilityOfElementLocated(element));
+	}
+	
 	public void waitForClickable(WebElement element) {
+		wt.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
+	public void waitForClickable(By element) {
 		wt.until(ExpectedConditions.elementToBeClickable(element));
 	}
 

@@ -4,20 +4,20 @@ import java.io.IOException;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import Base.BaseClass;
-import PageObject.loginPageComponent;
+import PageObject.LoginPageComponent;
 import Utility.CONSTANT;
 import Utility.CommonHelper;
 import io.cucumber.java.en.*;
 
-public class loginStep {
+public class LoginStep {
 	public WebDriver driver;
-	public loginPageComponent lg;
+	public LoginPageComponent lg;
 
-	public loginStep() throws IOException {
+	public LoginStep() throws IOException {
 		BaseClass app = new BaseClass();
 		app.Setup();
 		driver = CommonHelper.driver;
-		lg = new loginPageComponent(driver);
+		lg = new LoginPageComponent(driver);
 	}
 
 	@Given("I launch the browser and hit the URL")

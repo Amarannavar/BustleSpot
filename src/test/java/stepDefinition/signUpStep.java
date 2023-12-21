@@ -7,11 +7,11 @@ import PageObject.SignUpPageComponent;
 import Utility.CommonHelper;
 import io.cucumber.java.en.*;
 
-public class signUpStep {
+public class SignUpStep {
 	public static WebDriver driver;
 	public static SignUpPageComponent signUp;
 
-	public signUpStep() throws IOException, InterruptedException {
+	public SignUpStep() throws IOException, InterruptedException {
 		driver = CommonHelper.driver;
 		signUp = new SignUpPageComponent(driver);
 	}

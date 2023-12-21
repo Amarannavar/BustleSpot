@@ -7,11 +7,11 @@ import org.testng.Assert;
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
-public class loginPageComponent extends pageFactory {
+public class LoginPageComponent extends pageFactory {
 	public static WebDriver driver;
 	public static ExplicitWaits wt;
 
-	public loginPageComponent(WebDriver driver) {
+	public LoginPageComponent(WebDriver driver) {
 		super(driver);
 		wt = new ExplicitWaits(driver);
 	}
