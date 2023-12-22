@@ -27,6 +27,18 @@ Feature: Verify update profile page
       | login success message   | firstname                    | lastname                    |
       | Successfully logged in. | Please enter your first name | Please enter your last name |
 
+  @OrganizationScreen13 @ProfileScreen
+  Scenario Outline: Upload profile picture and verify toast message
+    Given I launch the browser and hit the URL
+    When user is in login page and enter the email and password
+    Then Verify "<login success message>"
+    When delete profile photo
+    And close the application
+
+    Examples: 
+      | login success message   |
+      | Successfully logged in. |
+
   @OrganizationScreen @ProfileScreen
   Scenario Outline: Upload profile picture and verify toast message
     Given I launch the browser and hit the URL
