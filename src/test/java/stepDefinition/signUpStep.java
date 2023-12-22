@@ -3,17 +3,17 @@ package stepDefinition;
 import java.awt.AWTException;
 import java.io.IOException;
 import org.openqa.selenium.WebDriver;
-import PageObject.SignUpPageComponent;
+import PageObject.SignUpPageComponents;
 import Utility.CommonHelper;
 import io.cucumber.java.en.*;
 
 public class SignUpStep {
 	public static WebDriver driver;
-	public static SignUpPageComponent signUp;
+	public static SignUpPageComponents signUp;
 
 	public SignUpStep() throws IOException, InterruptedException {
 		driver = CommonHelper.driver;
-		signUp = new SignUpPageComponent(driver);
+		signUp = new SignUpPageComponents(driver);
 	}
 
 	@Given("user in lagin page and click on signUp")

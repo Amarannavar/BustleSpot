@@ -1,7 +1,7 @@
 Feature: Login to the application
 
   @loginScreen @ValidateLoginSuccessMessage
-  Scenario Outline: Verify the login page popup messages.
+  Scenario Outline: Verify the login page toast message
     Given I launch the browser and hit the URL
     When user is in login page and enter the "<email>" and "<password>"
     Then Verify "<login success message>"

@@ -11,13 +11,13 @@ import com.github.javafaker.Faker;
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
-public class SignUpPageComponent extends pageFactory {
+public class SignUpPageComponents extends pageFactory {
 
 	public WebDriver driver;
 	public static ExplicitWaits wt;
 	public String DummyEmail;
 
-	public SignUpPageComponent(WebDriver driver) {
+	public SignUpPageComponents(WebDriver driver) {
 		super(driver);
 		wt = new ExplicitWaits(driver);
 		this.driver=driver;
