@@ -1,18 +1,18 @@
 package stepDefinition;
 
 import org.openqa.selenium.WebDriver;
-import PageObject.OrganizationPageComponent;
+import PageObject.OrganizationPageComponents;
 import Utility.CommonHelper;
 import io.cucumber.java.en.*;
 
 public class CreateOrganizationStep {
 
 	public WebDriver driver;
-	public OrganizationPageComponent org;
+	public OrganizationPageComponents org;
 
 	public CreateOrganizationStep() {
 		driver = CommonHelper.driver;
-		org = new OrganizationPageComponent(driver);
+		org = new OrganizationPageComponents(driver);
 	}
 
 	@When("create new organization {string},{string} and {string}")
@@ -30,10 +30,20 @@ public class CreateOrganizationStep {
 	public void delete_organization(String name) throws InterruptedException {
 		org.deleteOrg(name);
 	}
-	
+
 	@Then("Verify {string} and {string} validation message")
 	public void validation(String organization, String description) {
 		org.validateMessages(organization, description);
 	}
+
+	@And("edit the organization {string},{string} and {string}")
+	public void editOrg(String oldname,String newName, String description) throws InterruptedException {
+		org.editOrganization(oldname,newName, description);
+	}
 	
+	@When("Switch to other organization")
+	public void switchingOrg() {
+		org.changeTheOrganization();
+	}
+
 }

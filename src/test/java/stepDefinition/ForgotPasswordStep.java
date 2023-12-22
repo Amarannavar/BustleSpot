@@ -2,18 +2,18 @@ package stepDefinition;
 
 import java.io.IOException;
 import org.openqa.selenium.WebDriver;
-import PageObject.LoginPageComponent;
+import PageObject.LoginPageComponents;
 import Utility.CommonHelper;
 import io.cucumber.java.en.*;
 
 public class ForgotPasswordStep {
 
 	public static WebDriver driver;
-	public LoginPageComponent lg;
+	public LoginPageComponents lg;
 
 	public ForgotPasswordStep() throws IOException, InterruptedException {
 		driver = CommonHelper.driver;
-		lg = new LoginPageComponent(driver);
+		lg = new LoginPageComponents(driver);
 	}
 
 	@Given("user in login page and click forgot password and enter {string}")
