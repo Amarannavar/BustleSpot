@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "C:\\Users\\SoftSuave\\eclipse-workspace\\Bustlespot\\Features\\OrganizationScreen.Features", glue = {
-		"stepDefinition" }, monochrome = true, dryRun = false, tags = "@ProfileScreen", plugin = { "pretty",
+		"stepDefinition" }, monochrome = true, dryRun = false, tags = "@OrganizationScreen", plugin = { "pretty",
 				"html:target/cucumber-reports.html" })
 
 public class OrganizationRun {

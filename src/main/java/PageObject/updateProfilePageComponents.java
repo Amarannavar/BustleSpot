@@ -49,13 +49,13 @@ public class updateProfilePageComponents extends pageFactory {
 
 	@FindBy(xpath = "//li[text()='Add new']")
 	WebElement addNewButton;
-	
+
 	@FindBy(xpath = "//li[text()='Remove']")
 	WebElement removeButton;
 
 	@FindBy(css = "[type=\"file\"]")
 	WebElement fileUpload;
-	
+
 	@FindBy(css = "[name=\"submitText\"]")
 	WebElement yesButton;
 
@@ -97,7 +97,7 @@ public class updateProfilePageComponents extends pageFactory {
 	}
 
 	public void uploadFile(String path) throws InterruptedException {
-		if(path.isEmpty()) {
+		if (path.isEmpty()) {
 			wt.waitForVisibility(profileButton);
 			profileButton.click();
 			wt.waitForVisibility(editPictureButton);
@@ -112,10 +112,23 @@ public class updateProfilePageComponents extends pageFactory {
 				Thread.sleep(2000);
 			}
 			updateButton.click();
-		}else {
+		} else {
 			fileUpload.sendKeys(path);
 			updateButton.click();
 		}
-		
+	}
+
+	public void deleteProfilePhoto() {
+		wt.waitForVisibility(profileButton);
+		profileButton.click();
+		wt.waitForVisibility(editPictureButton);
+		editPictureButton.click();
+		try {
+			wt.waitForVisibility(removeButton);
+			removeButton.click();
+			yesButton.click();
+		} catch (Exception e) {
+			System.out.println("Current user don't have profile photo");
+		}
 	}
 }

@@ -34,4 +34,9 @@ public class updateProfileStep {
 	public void uploadFile(String path) throws InterruptedException {
 		prof.uploadFile(path);
 	}
+
+	@When("delete profile photo")
+	public void deleteProfilePhoto() {
+		prof.deleteProfilePhoto();
+	}
 }
