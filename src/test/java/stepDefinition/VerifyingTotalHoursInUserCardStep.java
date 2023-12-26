@@ -2,19 +2,19 @@ package stepDefinition;
 
 import org.openqa.selenium.WebDriver;
 
-import PageObject.VerifyTotalHoursInUserCardPage;
+import PageObject.ActivityPageComponent;
 import Utility.CommonHelper;
 import io.cucumber.java.en.*;
 
 public class VerifyingTotalHoursInUserCardStep {
 	
 	public WebDriver driver;
-	public VerifyTotalHoursInUserCardPage activity;
+	public ActivityPageComponent activity;
 	
 	
 	public VerifyingTotalHoursInUserCardStep() {
 		driver = CommonHelper.driver;	
-		activity = new VerifyTotalHoursInUserCardPage(driver);
+		activity = new ActivityPageComponent(driver);
 	}
 
 	
