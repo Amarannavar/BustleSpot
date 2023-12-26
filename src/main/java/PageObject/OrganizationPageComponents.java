@@ -107,11 +107,19 @@ public class OrganizationPageComponents extends pageFactory {
 		submitButton.click();
 	}
 
-	public void changeTheOrganization() {
+	public void changeToSecondOrg() {
 		wt.waitForVisibility(switchOrgButton);
 		switchOrgButton.click();
 		wt.waitForVisibility(selectSecondOrg);
 		selectSecondOrg.click();
+
+	}
+	
+	public void changeTheOrganization(String orgName) {
+		wt.waitForVisibility(switchOrgButton);
+		switchOrgButton.click();
+		wt.waitForVisibility(By.xpath("//div[@role=\"presentation\"]//p[text()='"+orgName+"']"));
+		driver.findElement(By.xpath("//div[@role=\"presentation\"]//p[text()='"+orgName+"']")).click();
 
 	}
 }
