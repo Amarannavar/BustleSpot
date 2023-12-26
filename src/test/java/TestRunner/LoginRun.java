@@ -6,8 +6,8 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "C:\\Users\\SoftSuave\\eclipse-workspace\\Bustlespot\\Features\\LoginScreenFeatures", glue = {
-		"stepDefinition" }, monochrome = true, dryRun = false, plugin = {
-				"pretty", "html:target/cucumber-reports.html" })
+		"stepDefinition" }, monochrome = true, dryRun = false, plugin = { "pretty",
+				"html:target/cucumber-reports.html" })
 
 public class LoginRun {
 }
