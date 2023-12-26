@@ -38,5 +38,5 @@ Feature: Verify the signUp page.
     And close the application
 
     Examples: 
-      | emailId    | firstName         | lastName          | password | confirmPassword |
-      | abc@gmail. | sixteenCharrector | MaximumCharrector | Shashi   | Shashi#1234     |
+      | emailId    | firstName          | lastName           | password | confirmPassword |
+      | abc@gmail. | sixteenCharrectors | MaximumCharrectors | Shashi   | Shashi#1234     |

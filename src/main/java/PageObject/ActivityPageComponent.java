@@ -9,7 +9,7 @@ import org.testng.Assert;
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
-public class VerifyTotalHoursInUserCardPage extends pageFactory {
+public class ActivityPageComponent extends pageFactory {
 
 	public WebDriver driver;
 	public ExplicitWaits wt;
@@ -17,7 +17,7 @@ public class VerifyTotalHoursInUserCardPage extends pageFactory {
 	public boolean userPresent = true;
 	public boolean value;
 
-	public VerifyTotalHoursInUserCardPage(WebDriver driver) {
+	public ActivityPageComponent(WebDriver driver) {
 		super(driver);
 		wt = new ExplicitWaits(driver);
 		this.driver = driver;
