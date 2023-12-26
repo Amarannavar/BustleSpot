@@ -26,10 +26,6 @@ public class SignUpStep {
 		signUp.signUpForm(email, firstname, lastname, passwords, confirmpassword);
 	}
 
-//	@When("enter {string},{string},{string},{string}, and {string},")
-//	public void enter_and(String email, String firstname, String lastname, String passwords, String confirmpassword) {
-//	}
-
 	@Then("Verify {string} contains")
 	public void verify(String message) {
 		signUp.successMessage(message);
@@ -51,7 +47,7 @@ public class SignUpStep {
 	}
 
 	@Then("enter invalid values in all textbox and verify the error message")
-	public void invalidValue() throws AWTException {
+	public void invalidValue() throws AWTException, InterruptedException {
 		signUp.enterInvalidValues();
 	}
 }

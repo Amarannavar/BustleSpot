@@ -41,9 +41,13 @@ public class CreateOrganizationStep {
 		org.editOrganization(oldname,newName, description);
 	}
 	
-	@When("Switch to other organization")
+	@When("Switch to second organization")
 	public void switchingOrg() {
-		org.changeTheOrganization();
+		org.changeToSecondOrg();
+	}
+	@When("Switch to other {string}")
+	public void switching(String orgName) {
+		org.changeTheOrganization(orgName);
 	}
 
 }

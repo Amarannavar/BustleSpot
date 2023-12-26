@@ -9,7 +9,7 @@ Feature: Verify the signUp page.
     Then Verify popup "<created>"
     When navigate to login page
     And enter "<emailId>","<firstName>","<lastName>","<password>", and "<confirmPassword>"
-    And click on signUp button
+    And click on signUp buttondd
     Then Verify popup "<exists>"
     And close the application
 
@@ -29,7 +29,7 @@ Feature: Verify the signUp page.
       | emailId    | firstName         | lastName          | password   | confirmPassword |
       | abc@gmail. | sixteenCharrector | MaximumCharrector | Shashi#123 | Shashi#12       |
 
-  @loginScreen @SignUp
+  @loginScreen @SignUp1
   Scenario Outline: Entering invalid values to the textbox and verify error message
     Given I launch the browser and hit the URL
     When user in lagin page and click on signUp

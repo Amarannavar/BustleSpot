@@ -116,11 +116,13 @@ public class SignUpPageComponents extends pageFactory {
 		Assert.assertEquals(confirmPasswordActualText, "Please enter your confirm password");
 	}
 
-	public void enterInvalidValues() throws AWTException {
+	public void enterInvalidValues() throws AWTException, InterruptedException {
 		Robot robot = new Robot();
 		firstName.click();
+		Thread.sleep(2000);
 		robot.keyPress(KeyEvent.VK_D);
 		lastName.click();
+		Thread.sleep(2000);
 		robot.keyPress(KeyEvent.VK_D);
 		String emailActualText = emailTextbox.getText().stripTrailing();
 		Assert.assertEquals(emailActualText, "Please enter a valid email address");

@@ -48,7 +48,7 @@ Feature: Verifying organization module
     Given I launch the browser and hit the URL
     When user is in login page and enter the email and password
     Then Verify "<login success message>"
-    When Switch to other organization
+    When Switch to second organization
     And close the application
 
     Examples: 
