@@ -59,20 +59,20 @@ public class updateProfilePageComponents extends pageFactory {
 	@FindBy(css = "[name=\"submitText\"]")
 	WebElement yesButton;
 
-	public void updateName(String firstname) {
+	public void updateName(String firstname) throws InterruptedException {
 		wt.waitForVisibility(profileButton);
 		profileButton.click();
 		wt.waitForVisibility(updateProfileButton);
 		updateProfileButton.click();
 		wt.waitForVisibility(firstName);
 		String name = firstName.getAttribute("value");
-		if (name.endsWith(firstname)) {
-			firstName.clear();
-			firstName.sendKeys(name.substring(0, name.length() - 1));
-		} else {
-			firstName.clear();
-			firstName.sendKeys(name + firstname);
-		}
+		firstName.sendKeys(firstname);
+		updateButton.click();
+		Thread.sleep(2000);
+		updateProfileButton.click();
+		Thread.sleep(2000);
+		firstName.clear();
+		firstName.sendKeys(name);
 		updateButton.click();
 	}
 

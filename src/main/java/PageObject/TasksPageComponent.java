@@ -63,7 +63,7 @@ public class TasksPageComponent extends pageFactory {
 	}
 
 	public void deleteTask(String taskname) {
-		wait.waitForVisibility(By.xpath("//td[text()='" + taskname + "']/..//button"));
+		wait.waitForVisibility(By.xpath("//td[text()='" + taskname+ "s" + "']/..//button"));
 		driver.findElement(By.xpath("//td[text()='" + taskname+ "s" + "']/..//button")).click();
 		deleteButton.click();
 		yesButton.click();

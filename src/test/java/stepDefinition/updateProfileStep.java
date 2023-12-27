@@ -16,7 +16,7 @@ public class updateProfileStep {
 	}
 
 	@When("update {string}")
-	public void user_name(String firstName) {
+	public void user_name(String firstName) throws InterruptedException {
 		prof.updateName(firstName);
 	}
 

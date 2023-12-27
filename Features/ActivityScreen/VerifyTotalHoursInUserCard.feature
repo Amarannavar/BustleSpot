@@ -12,5 +12,5 @@ Feature: Verifying activity page
     And close the application
 
     Examples: 
-      | login success message   | title    | organization | user                    |
-      | Successfully logged in. | Activity | SoftSuave    | Shashidhar. Amarannavar |
+      | login success message   | title    | organization | user                   |
+      | Successfully logged in. | Activity | SoftSuave    | Shashidhar Amarannavar |

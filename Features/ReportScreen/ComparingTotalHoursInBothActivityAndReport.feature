@@ -14,4 +14,4 @@ Feature: Verifying Report page
 
     Examples: 
       | login success message   | title    | title2 | organization | user                    |
-      | Successfully logged in. | Activity | Report | SoftSuave    | Shashidhar. Amarannavar |
+      | Successfully logged in. | Activity | Report | SoftSuave    | Shashidhar Amarannavar |
