@@ -45,8 +45,6 @@ public class LoginPageComponents extends pageFactory {
 
 	@FindBy(xpath = "//button[text()='Reset Password']")
 	WebElement ResetPasswordButton;
-	
-	
 
 	public void enterLoginAndPassword(String email, String password) throws InterruptedException {
 		wt.waitForVisibility(txtEmail);
@@ -58,7 +56,7 @@ public class LoginPageComponents extends pageFactory {
 		wt.waitForClickable(loginButton);
 		loginButton.click();
 	}
-	
+
 	public void getMessage(String expectedText) {
 		wt.waitForVisibility(messagePopup);
 		String actualText = messagePopup.getText();
@@ -75,13 +73,21 @@ public class LoginPageComponents extends pageFactory {
 	}
 
 	public void emailCred(String email, String password) {
-		wt.waitForVisibility(txtEmail);
-		txtEmail.clear();
-		txtEmail.sendKeys(email);
-		txtPassword.click();
-		txtPassword.clear();
-		txtPassword.sendKeys(password);
-		txtPassword.clear();
+		if (email.isEmpty() && password.isEmpty()) {
+			wt.waitForVisibility(txtEmail);
+			txtEmail.clear();
+			txtEmail.sendKeys("passing null value");
+			txtEmail.clear();
+			wt.waitForVisibility(emailValidation);
+		} else {
+			wt.waitForVisibility(txtEmail);
+			txtEmail.clear();
+			txtEmail.sendKeys(email);
+			txtPassword.click();
+			txtPassword.clear();
+			txtPassword.sendKeys(password);
+			txtPassword.clear();
+		}
 	}
 
 	public void validateMessage(String expectedText) {
@@ -102,11 +108,11 @@ public class LoginPageComponents extends pageFactory {
 		wt.waitForVisibility(txtEmail);
 		txtEmail.click();
 		txtEmail.sendKeys(email);
-		txtEmail.clear();		
-		txtEmail.sendKeys(email);	
+		txtEmail.clear();
+		txtEmail.sendKeys(email);
 	}
-	
-	public void clickResetPassword() {	
+
+	public void clickResetPassword() {
 		ResetPasswordButton.click();
 	}
 

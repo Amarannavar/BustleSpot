@@ -25,6 +25,7 @@ Feature: Login to the application
       | email                  | password  | validation message                 |
       | shashidhar.amarannavar |           | Please enter a valid email address |
       |                        | Shashi#12 | Please enter your password         |
+      |                        |           | Please enter your email            |
 
   @RegressionTest
   Scenario Outline: Login to the home page.
