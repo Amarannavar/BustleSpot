@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import Utility.CONSTANT;
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
@@ -13,7 +14,6 @@ public class ActivityPageComponent extends pageFactory {
 
 	public WebDriver driver;
 	public ExplicitWaits wt;
-	public String[] totalHours;
 	public boolean userPresent = true;
 	public boolean value;
 
@@ -47,7 +47,7 @@ public class ActivityPageComponent extends pageFactory {
 					.findElement(By.xpath("//p[text()='" + name
 							+ "']/../../following-sibling::div//p[text()='Total Hours']/following-sibling::p"))
 					.getText();
-			totalHours = hours.split(" : ");
+			CONSTANT.TOTALHOURS = hours.split(" : ");
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//p[text()='" + name + "']/../../a")).click();
 		} else {
@@ -61,7 +61,11 @@ public class ActivityPageComponent extends pageFactory {
 			String actualHour = driver.findElement(By.xpath("//p[text()='Activity']/following-sibling::div/p"))
 					.getText();
 			String[] ActualHour = actualHour.split(" ");
-			Assert.assertEquals(totalHours[0] + totalHours[1], ActualHour[2] + ActualHour[5] + " hrs");
+			try {
+			Assert.assertEquals(CONSTANT.TOTALHOURS[0] + CONSTANT.TOTALHOURS[1], ActualHour[2] + ActualHour[5] + " hrs");
+			}catch(Exception e) {
+				Assert.assertEquals(CONSTANT.TOTALHOURS[0] + CONSTANT.TOTALHOURS[1], "00" + ActualHour[2] + " hrs");
+			}
 		} else {
 			System.out.println("User not found !!!");
 		}
