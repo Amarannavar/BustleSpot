@@ -1,7 +1,7 @@
 Feature: Verify the signUp page.
 
   @loginScreen @SignUp
-  Scenario Outline: Create account and verify the popup
+  Scenario Outline: Create account and verify the toast message
     Given I launch the browser and hit the URL
     When user in lagin page and click on signUp
     And enter "<emailId>","<firstName>","<lastName>","<password>", and "<confirmPassword>"
@@ -18,7 +18,7 @@ Feature: Verify the signUp page.
       | @gmail.com | Shashi    | A        | Shashi#123 | Shashi#123      | User has been created successfully.Please verify the email. | User already exists please sign in. |
 
   @loginScreen @SignUp
-  Scenario Outline: Entering blank values to the textbox and verify error message
+  Scenario Outline: Entering null values to the textbox and verify error message
     Given I launch the browser and hit the URL
     When user in lagin page and click on signUp
     And enter "<emailId>","<firstName>","<lastName>","<password>", and "<confirmPassword>"
