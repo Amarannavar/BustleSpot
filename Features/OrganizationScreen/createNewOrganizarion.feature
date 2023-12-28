@@ -17,7 +17,7 @@ Feature: Verifying organization module
       | Successfully logged in. | Please Upload Your Organization Logo!       | Softsuave org     | Verify to create new organization |                                                                                     |
 
   @OrganizationScreen @regression
-  Scenario Outline: Entering null values and verify toast message
+  Scenario Outline: Entering null values and verify validation message
     Given I launch the browser and hit the URL
     When user is in login page and enter the email and password
     Then Verify "<login success message>"
@@ -52,8 +52,8 @@ Feature: Verifying organization module
     And close the application
 
     Examples: 
-      | login success message   | success message                   |
-      | Successfully logged in. | Organisation updated successfully |
+      | login success message   |
+      | Successfully logged in. |
 
   @OrganizationScreen @regression
   Scenario Outline: Delete the organization and verify toast message
