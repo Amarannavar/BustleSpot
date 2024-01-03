@@ -11,6 +11,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	public static WebDriver driver;
+
 	public BaseClass() throws IOException {
 		CommonHelper c = new CommonHelper();
 	}
@@ -21,19 +22,19 @@ public class BaseClass {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver();
-			CommonHelper.driver=driver;
+			CommonHelper.driver = driver;
 
 		} else if (CONSTANT.BROWSER.equalsIgnoreCase("Firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxDriver driver = new FirefoxDriver();
-			CommonHelper.driver=driver;
+			CommonHelper.driver = driver;
 
 		} else {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver();
-			CommonHelper.driver=driver;
+			CommonHelper.driver = driver;
 		}
 	}
 }

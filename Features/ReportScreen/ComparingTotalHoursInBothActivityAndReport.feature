@@ -13,5 +13,5 @@ Feature: Verifying Report page
     And close the application
 
     Examples: 
-      | login success message   | title    | title2 | organization | user                    |
-      | Successfully logged in. | Activity | Report | SoftSuave    | Shashidhar Amarannavar |
+      | login success message   | title    | title2 | organization | user                   |
+      | Successfully logged in. | Activity | Report | SoftSuave    | Shashidhar. Amarannavar |
