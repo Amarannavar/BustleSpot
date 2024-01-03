@@ -28,11 +28,15 @@ public class ReportPageComponent extends pageFactory {
 	WebElement selectUserDropdown;
 
 	public void compareBothTotalHours(String userName) throws InterruptedException {
-		wait.waitForVisibility(selectUserDropdown);
-		selectUserDropdown.click();
-		driver.findElement(By.xpath("(//div[text()='" + userName + "'])[2]")).click();
-		Thread.sleep(2000);
-		String[] totalHours = totalHoursInReportPage.getText().split(" : ");
-		Assert.assertEquals(CONSTANT.TOTALHOURS[0] + CONSTANT.TOTALHOURS[1], totalHours[0] + totalHours[1]);
+		if (CONSTANT.TOTALHOURS.length >= 0) {
+			wait.waitForVisibility(selectUserDropdown);
+			selectUserDropdown.click();
+			driver.findElement(By.xpath("(//div[text()='" + userName + "'])[2]")).click();
+			Thread.sleep(2000);
+			String[] totalHours = totalHoursInReportPage.getText().split(" : ");
+			Assert.assertEquals(CONSTANT.TOTALHOURS[0] + CONSTANT.TOTALHOURS[1], totalHours[0] + totalHours[1]);
+		} else {
+			System.out.println("User Don't have activity Hours.");
+		}
 	}
 }
