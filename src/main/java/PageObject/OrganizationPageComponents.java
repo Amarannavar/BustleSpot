@@ -115,9 +115,10 @@ public class OrganizationPageComponents extends pageFactory {
 
 	}
 	
-	public void changeTheOrganization(String orgName) {
+	public void changeTheOrganization(String orgName) throws InterruptedException {
 		wt.waitForVisibility(switchOrgButton);
 		switchOrgButton.click();
+		Thread.sleep(3000);
 		wt.waitForVisibility(By.xpath("//div[@role=\"presentation\"]//p[text()='"+orgName+"']"));
 		driver.findElement(By.xpath("//div[@role=\"presentation\"]//p[text()='"+orgName+"']")).click();
 
