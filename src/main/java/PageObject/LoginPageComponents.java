@@ -68,6 +68,7 @@ public class LoginPageComponents extends pageFactory {
 		try {
 			getMessage(expectedText);
 		} catch (Exception e) {
+			wt.waitForVisibility(title);
 			title.isDisplayed();
 		}
 	}

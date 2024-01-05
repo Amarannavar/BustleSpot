@@ -46,7 +46,7 @@ public class CreateOrganizationStep {
 		org.changeToSecondOrg();
 	}
 	@When("Switch to other {string}")
-	public void switching(String orgName) {
+	public void switching(String orgName) throws InterruptedException {
 		org.changeTheOrganization(orgName);
 	}
 
