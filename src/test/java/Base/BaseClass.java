@@ -18,21 +18,14 @@ public class BaseClass {
 
 	public void Setup() throws IOException {
 		if (CONSTANT.BROWSER.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver();
 			CommonHelper.driver = driver;
 
 		} else if (CONSTANT.BROWSER.equalsIgnoreCase("Firefox")) {
-			WebDriverManager.firefoxdriver().setup();
-			FirefoxDriver driver = new FirefoxDriver();
+			driver = new FirefoxDriver();
 			CommonHelper.driver = driver;
 
 		} else {
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver();
 			CommonHelper.driver = driver;
 		}

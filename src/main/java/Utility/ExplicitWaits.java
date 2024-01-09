@@ -18,7 +18,6 @@ public class ExplicitWaits {
 		wt = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 	
-
 	public void waitForVisibility(WebElement element) {
 		wt.until(ExpectedConditions.visibilityOf(element));
 	}

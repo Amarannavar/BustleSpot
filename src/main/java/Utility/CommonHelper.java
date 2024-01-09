@@ -20,11 +20,11 @@ public class CommonHelper {
 
 	public static Properties readPropertiesFile() throws IOException {
 
-		FileInputStream fis = null;
-		Properties prop = null;
-		fis = new FileInputStream(
+		FileInputStream fis =new FileInputStream(
 				"C:\\Users\\SoftSuave\\eclipse-workspace\\Bustlespot\\resources\\testConfig.properties");
-		prop = new Properties();
+		Properties prop =new Properties();
+//		fis = 
+//		prop = 
 		prop.load(fis);
 		return prop;
 	}
