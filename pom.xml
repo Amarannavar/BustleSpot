@@ -124,7 +124,7 @@
 			<artifactId>tools</artifactId>
 			<version>1.8</version>
 			<scope>system</scope>
-			<systemPath>C:/Program Files/Java/jdk-20/lib/tools.jar</systemPath>
+			<systemPath>C:/Program Files/Java/jdk-21/lib/tools.jar</systemPath>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
