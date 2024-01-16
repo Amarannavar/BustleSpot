@@ -72,7 +72,6 @@ public class OrganizationPageComponents extends pageFactory {
 		} catch (Exception e) {
 			Thread.sleep(2000);
 		}
-
 	}
 
 	public void clickOnSubmit() {
@@ -112,7 +111,6 @@ public class OrganizationPageComponents extends pageFactory {
 		switchOrgButton.click();
 		wt.waitForVisibility(selectSecondOrg);
 		selectSecondOrg.click();
-
 	}
 	
 	public void changeTheOrganization(String orgName) throws InterruptedException {
@@ -121,6 +119,5 @@ public class OrganizationPageComponents extends pageFactory {
 		Thread.sleep(3000);
 		wt.waitForVisibility(By.xpath("//div[@role=\"presentation\"]//p[text()='"+orgName+"']"));
 		driver.findElement(By.xpath("//div[@role=\"presentation\"]//p[text()='"+orgName+"']")).click();
-
 	}
 }
