@@ -52,5 +52,5 @@ Feature: Verify update profile page
     And close the application
 
     Examples: 
-      | login success message   | select file          | file uploaded                      | picture                                                                          |
-      | Successfully logged in. | Please select a File | Profile Picture added successfully | C:\\Users\\SoftSuave\\eclipse-workspace\\Bustlespot\\resources\\profilePhoto.png |
+      | login success message   | select file          | file uploaded                      | picture                                                                                  |
+      | Successfully logged in. | Please select a File | Profile Picture added successfully | C:\\Users\\Soft Suave\\BustlespotAutomation2024\\Bustlespot\\resources\\profilePhoto.png |
