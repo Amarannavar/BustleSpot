@@ -4,7 +4,8 @@ Feature: Login to the application
   Scenario Outline: Verify the login page toast message
     Given I launch the browser and hit the URL
     When user is in login page and enter the "<email>" and "<password>"
-    Then Verify "<login success message>"
+    # Then Verify "<login success message>"
+    Then Verify popup "<login success message>"
     And close the application
 
     Examples: 
