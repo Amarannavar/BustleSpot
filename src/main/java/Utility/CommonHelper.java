@@ -21,7 +21,7 @@ public class CommonHelper {
 	public static Properties readPropertiesFile() throws IOException {
 
 		FileInputStream fis =new FileInputStream(
-				"C:\\Users\\Soft Suave\\BustlespotAutomation2024\\Bustlespot\\resources\\testConfig.properties");
+				"C:\\Users\\Softsuave\\BustlespotAutomation2024\\Bustlespot\\resources\\testConfig.properties");
 		Properties prop =new Properties();
 		prop.load(fis);
 		return prop;
