@@ -28,12 +28,14 @@
 			<version>5.10.1</version>
 		</dependency>
 
-		<!--https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<!--
+		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.6.3</version>
 		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
 		<dependency>
@@ -113,14 +115,6 @@
 			<groupId>io.cucumber</groupId>
 			<artifactId>gherkin</artifactId>
 			<version>27.0.0</version>
-		</dependency>
-
-        <dependency>
-			<groupId>com.sun</groupId>
-			<artifactId>tools</artifactId>
-			<version>1.8</version>
-			<scope>system</scope>
-			<systemPath>C:/Program Files/Java/jdk-21/lib/tools.jar</systemPath>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->

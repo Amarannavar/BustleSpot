@@ -11,10 +11,10 @@ Feature: Verifying organization module
     And close the application
 
     Examples: 
-      | login success message   | success message                             | organization name | description                       | file location                                                                               |
-      | Successfully logged in. | Organsiation has been created successfully. | Softsuave org     | Verify to create new organization | C:\\Users\\Soft Suave\\BustlespotAutomation2024\\Bustlespot\\resources\\soft_suave_logo.jpg |
-      | Successfully logged in. | Organization already present                | Softsuave org     | Verify to create new organization | C:\\Users\\Soft Suave\\BustlespotAutomation2024\\Bustlespot\\resources\\soft_suave_logo.jpg |
-      | Successfully logged in. | Please Upload Your Organization Logo!       | Softsuave org     | Verify to create new organization |                                                                                             |
+      | login success message   | success message                             | organization name | description                       | file location                                                                              |
+      | Successfully logged in. | Organsiation has been created successfully. | Softsuave org     | Verify to create new organization | C:\\Users\\Softsuave\\BustlespotAutomation2024\\Bustlespot\\resources\\soft_suave_logo.jpg |
+      | Successfully logged in. | Organization already present                | Softsuave org     | Verify to create new organization | C:\\Users\\Softsuave\\BustlespotAutomation2024\\Bustlespot\\resources\\soft_suave_logo.jpg |
+      | Successfully logged in. | Please Upload Your Organization Logo!       | Softsuave org     | Verify to create new organization |                                                                                            |
 
   @OrganizationScreen @regression
   Scenario Outline: Entering null values and verify validation message
