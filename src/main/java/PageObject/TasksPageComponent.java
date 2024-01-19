@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import Utility.CommonHelper;
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
@@ -55,7 +56,7 @@ public class TasksPageComponent extends pageFactory {
 		wait.waitForVisibility(By.xpath("//td[text()='" + taskname + "']/..//button"));
 		driver.findElement(By.xpath("//td[text()='" + taskname + "']/..//button")).click();
 		editButton.click();
-		taskName.clear();
+		CommonHelper.clearTextbox(taskName);
 		String actutalText = tasknameErrorText.getText().stripTrailing();
 		Assert.assertEquals(actutalText, expectedText);
 		taskName.sendKeys(taskname + "s");

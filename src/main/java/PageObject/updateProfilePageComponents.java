@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import Utility.CommonHelper;
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
@@ -71,12 +72,13 @@ public class updateProfilePageComponents extends pageFactory {
 		Thread.sleep(2000);
 		updateProfileButton.click();
 		Thread.sleep(2000);
-		firstName.clear();
+		CommonHelper.clearTextbox(firstName);
 		firstName.sendKeys(name);
 		updateButton.click();
 	}
 
-	public void withoutUpdate() {
+	public void withoutUpdate() throws InterruptedException {
+		Thread.sleep(3000);
 		wt.waitForVisibility(updateProfileButton);
 		updateProfileButton.click();
 		updateButton.click();
@@ -89,8 +91,8 @@ public class updateProfilePageComponents extends pageFactory {
 		wt.waitForVisibility(updateProfileButton);
 		updateProfileButton.click();
 		wt.waitForVisibility(firstName);
-		firstName.clear();
-		lastName.clear();
+		CommonHelper.clearTextbox(firstName);
+		CommonHelper.clearTextbox(lastName);
 		Assert.assertEquals(firstnameValidation.getText().stripTrailing(), firstname);
 		Assert.assertEquals(lastnameValidation.getText().stripTrailing(), lastname);
 

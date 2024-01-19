@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import Utility.CommonHelper;
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
@@ -100,7 +101,7 @@ public class OrganizationPageComponents extends pageFactory {
 		wt.waitForVisibility(By.xpath("//p[text()='" + oldname + "']/../../..//div//p[text()='Edit']"));
 		driver.findElement(By.xpath("//p[text()='" + oldname + "']/../../..//div//p[text()='Edit']")).click();
 		wt.waitForVisibility(orgName);
-		orgName.clear();
+		CommonHelper.clearTextbox(orgName);
 		orgName.sendKeys(newName);
 		orgDescription.sendKeys(description);
 		submitButton.click();
