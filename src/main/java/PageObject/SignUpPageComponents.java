@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import com.github.javafaker.Faker;
+import Utility.CommonHelper;
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
@@ -20,7 +21,7 @@ public class SignUpPageComponents extends pageFactory {
 	public SignUpPageComponents(WebDriver driver) {
 		super(driver);
 		wt = new ExplicitWaits(driver);
-		this.driver=driver;
+		this.driver = driver;
 	}
 
 	@FindBy(xpath = "//input[@name=\"email\"]")
@@ -67,19 +68,18 @@ public class SignUpPageComponents extends pageFactory {
 		signUpLink.click();
 		DummyEmail = Faker.instance().name().firstName();
 	}
-	
+
 	public void navigate() throws InterruptedException {
 		driver.navigate().back();
 	}
 
 	public void signUpForm(String email, String firstname, String lastname, String passwords, String confirmpassword) {
 		wt.waitForVisibility(emailId);
-		emailId.sendKeys(DummyEmail+email);
+		emailId.sendKeys(DummyEmail + email);
 		firstName.sendKeys(firstname);
 		lastName.sendKeys(lastname);
 		password.sendKeys(passwords);
 		confirmPassword.sendKeys(confirmpassword);
-
 	}
 
 	public void clickOnSignup() throws InterruptedException {
@@ -96,14 +96,13 @@ public class SignUpPageComponents extends pageFactory {
 			System.out.println(actualText);
 		}
 	}
-	
-	public void enterBlankValues() {
-		emailId.clear();
-		firstName.clear();
-		lastName.clear();
-		password.clear();
-		confirmPassword.clear();
 
+	public void enterBlankValues() {
+		CommonHelper.clearTextbox(emailId);
+		CommonHelper.clearTextbox(firstName);
+		CommonHelper.clearTextbox(lastName);
+		CommonHelper.clearTextbox(password);
+		CommonHelper.clearTextbox(confirmPassword);
 		String emailActualText = emailTextbox.getText().stripTrailing();
 		Assert.assertEquals(emailActualText, "Please enter your email");
 		String firstnameActualText = firstNameTextbox.getText().stripTrailing();

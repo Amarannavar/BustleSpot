@@ -21,7 +21,7 @@ public class updateProfileStep {
 	}
 
 	@When("click on update button without changing values")
-	public void click_on_update_button_without_update() {
+	public void click_on_update_button_without_update() throws InterruptedException {
 		prof.withoutUpdate();
 	}
 

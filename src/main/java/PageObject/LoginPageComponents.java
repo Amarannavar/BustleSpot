@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import Utility.CommonHelper;
 import Utility.ExplicitWaits;
 import Utility.pageFactory;
 
@@ -48,10 +49,10 @@ public class LoginPageComponents extends pageFactory {
 
 	public void enterLoginAndPassword(String email, String password) throws InterruptedException {
 		wt.waitForVisibility(txtEmail);
-		txtEmail.clear();
+		CommonHelper.clearTextbox(txtEmail);
 		txtEmail.sendKeys(email);
 		txtPassword.click();
-		txtPassword.clear();
+		CommonHelper.clearTextbox(txtPassword);
 		txtPassword.sendKeys(password);
 		wt.waitForClickable(loginButton);
 		loginButton.click();
@@ -76,18 +77,18 @@ public class LoginPageComponents extends pageFactory {
 	public void emailCred(String email, String password) {
 		if (email.isEmpty() && password.isEmpty()) {
 			wt.waitForVisibility(txtEmail);
-			txtEmail.clear();
+			CommonHelper.clearTextbox(txtEmail);
 			txtEmail.sendKeys("passing null value");
-			txtEmail.clear();
+			CommonHelper.clearTextbox(txtEmail);
 			wt.waitForVisibility(emailValidation);
 		} else {
 			wt.waitForVisibility(txtEmail);
-			txtEmail.clear();
+			CommonHelper.clearTextbox(txtEmail);
 			txtEmail.sendKeys(email);
 			txtPassword.click();
-			txtPassword.clear();
+			CommonHelper.clearTextbox(txtPassword);
 			txtPassword.sendKeys(password);
-			txtPassword.clear();
+			CommonHelper.clearTextbox(txtPassword);
 		}
 	}
 
@@ -109,7 +110,7 @@ public class LoginPageComponents extends pageFactory {
 		wt.waitForVisibility(txtEmail);
 		txtEmail.click();
 		txtEmail.sendKeys(email);
-		txtEmail.clear();
+		CommonHelper.clearTextbox(txtEmail);
 		txtEmail.sendKeys(email);
 	}
 
